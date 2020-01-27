@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="workExperience"
+            type="com.example.cvapp.data.model.WorkExperience" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_medium">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_cv_company"
+            android:gravity="center_vertical"
+            android:text="@{workExperience.companyName}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="Company name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_cv_job_title"
+            android:gravity="center_vertical"
+            android:text="@{workExperience.position}"
+            android:textSize="@dimen/text_big"
+            tools:text="Job title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_cv_calendar"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_medium"
+            app:from="@{workExperience.from}"
+            app:to="@{workExperience.to}"
+            tools:text="Date" />
+
+    </LinearLayout>
+</layout>

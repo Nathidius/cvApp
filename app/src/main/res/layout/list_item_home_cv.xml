@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cv"
+            type="com.example.cvapp.data.model.CV" />
+
+        <variable
+            name="listener"
+            type="com.example.cvapp.ui.home.OnCVClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> listener.onClick(cv.id)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_padding">
+
+            <ImageView
+                android:id="@+id/imageViewPhoto"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:photo="@{cv.photo}"
+                tools:srcCompat="@drawable/ic_cv_image" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/deleteCV"
+                android:layout_toEndOf="@id/imageViewPhoto"
+                android:lines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                app:name="@{cv.firstName}"
+                app:surname="@{cv.surname}"
+                tools:text="Firstname Surname" />
+
+            <TextView
+                android:id="@+id/textViewApplyingFor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewName"
+                android:layout_toStartOf="@+id/deleteCV"
+                android:layout_toEndOf="@id/imageViewPhoto"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@{cv.applyingFor}"
+                android:textSize="@dimen/text_big"
+                tools:text="Applying For" />
+
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewApplyingFor"
+                android:layout_toStartOf="@+id/deleteCV"
+                android:layout_toEndOf="@id/imageViewPhoto"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@{cv.email}"
+                android:textSize="@dimen/text_medium"
+                tools:text="Email" />
+
+            <ImageView
+                android:id="@+id/deleteCV"
+                android:layout_width="25dp"
+                android:rotation="45"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/delete_button_background"
+                android:onClick="@{() -> listener.onDelete(cv.id)}"
+                app:srcCompat="@drawable/ic_add" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

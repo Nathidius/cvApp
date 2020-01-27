@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CVApp</string>
+
+    <string name="name">%1$s %2$s</string>
+    <string name="date">%1$s - %2$s</string>
+    <string name="workExperience">Work experience:</string>
+    <string name="photoUrl">Photo Url</string>
+    <string name="firstName">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="applyingFor">Applying For</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="streetAddress">Street Address</string>
+    <string name="secondaryAddress">Secondary Address</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="salary">Salary</string>
+    <string name="companyName">Company name</string>
+    <string name="position">Position</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="addCV">Add CV</string>
+    <string name="editTextError">Please insert correct data</string>
+
+</resources>
+

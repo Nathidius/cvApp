@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.cvapp.ui.details.DetailsFragmentViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/details_image_size"
+                android:layout_height="@dimen/details_image_size"
+                android:layout_gravity="center_horizontal"
+                app:photo="@{viewModel.cv.photo}"
+                tools:srcCompat="@drawable/ic_cv_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                app:name="@{viewModel.cv.firstName}"
+                app:surname="@{viewModel.cv.surname}"
+                tools:text="Firstname Surname" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_job_title"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.cv.applyingFor}"
+                android:textSize="@dimen/text_big"
+                tools:text="Job" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_home"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_medium"
+                app:city="@{viewModel.cv.city}"
+                app:country="@{viewModel.cv.country}"
+                app:secondaryAdress="@{viewModel.cv.secondaryAdress}"
+                app:streetAdress="@{viewModel.cv.streetAdress}"
+                tools:text="Address" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_mail"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.cv.email}"
+                android:textSize="@dimen/text_medium"
+                tools:text="Email" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_phone"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.cv.phone}"
+                android:textSize="@dimen/text_medium"
+                tools:text="Phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_money"
+                android:gravity="center_vertical"
+                android:text="@{Integer.toString(viewModel.cv.salary)}"
+                android:textSize="@dimen/text_medium"
+                tools:text="Salary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawableStart="@drawable/ic_cv_company"
+                android:gravity="center_vertical"
+                android:text="@string/workExperience"
+                android:textSize="@dimen/text_medium" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/workExperienceListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_big"
+                android:layout_marginEnd="@dimen/margin_big"
+                app:detailsWorkExperienceListData="@{viewModel.cv.workExperience}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/list_item_details_work_experience" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

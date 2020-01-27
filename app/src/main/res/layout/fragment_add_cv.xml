@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.cvapp.ui.add.AddFragmentViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_big"
+            android:layout_marginEnd="@dimen/margin_big"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/details_image_size"
+                android:layout_height="@dimen/details_image_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="@dimen/default_margin"
+                app:photo="@{viewModel.cvLiveData.photo}"
+                tools:srcCompat="@drawable/ic_cv_image" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.photo}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_image"
+                    android:gravity="center_vertical"
+                    android:hint="@string/photoUrl"
+                    android:inputType="textUri"
+                    android:text="@={viewModel.cv.photo}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.firstName}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_image"
+                    android:gravity="center_vertical"
+                    android:hint="@string/firstName"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.cv.firstName}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.surname}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_image"
+                    android:gravity="center_vertical"
+                    android:hint="@string/surname"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.cv.surname}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.applyingFor}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_job_title"
+                    android:gravity="center_vertical"
+                    android:hint="@string/applyingFor"
+                    android:inputType="text"
+                    android:text="@={viewModel.cv.applyingFor}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.country}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_home"
+                    android:gravity="center_vertical"
+                    android:hint="@string/country"
+                    android:inputType="text"
+                    android:text="@={viewModel.cv.country}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.city}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_home"
+                    android:gravity="center_vertical"
+                    android:hint="@string/city"
+                    android:inputType="text"
+                    android:text="@={viewModel.cv.city}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.streetAdress}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_home"
+                    android:gravity="center_vertical"
+                    android:hint="@string/streetAddress"
+                    android:inputType="text"
+                    android:text="@={viewModel.cv.streetAdress}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.secondaryAdress}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_home"
+                    android:gravity="center_vertical"
+                    android:hint="@string/secondaryAddress"
+                    android:inputType="text"
+                    android:text="@={viewModel.cv.secondaryAdress}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.email}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_mail"
+                    android:gravity="center_vertical"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.cv.email}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{viewModel.cvLiveData.phone}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_phone"
+                    android:gravity="center_vertical"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
+                    android:text="@={viewModel.cv.phone}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:error="@{@string/editTextError}"
+                app:text="@{Integer.toString(viewModel.cvLiveData.salary)}">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_cv_money"
+                    android:gravity="center_vertical"
+                    android:hint="@string/salary"
+                    android:inputType="number"
+                    android:text="@={``+viewModel.cv.salary}"
+                    android:textSize="@dimen/text_big"
+                    app:textWatcher="@{viewModel.textWatcher}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_cv_company"
+                    android:gravity="center_vertical"
+                    android:text="@string/workExperience"
+                    android:textSize="@dimen/text_medium" />
+
+                <ImageView
+                    android:id="@+id/addCV"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/add_button_background"
+                    android:onClick="@{() -> viewModel.onAddWorkExperienceClicked()}"
+                    app:srcCompat="@drawable/ic_add" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/workExperienceListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_big"
+                android:layout_marginEnd="@dimen/margin_big"
+                app:addWorkExperienceListData="@{viewModel.cvLiveData.workExperience}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/list_item_add_work_experience" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@color/colorPrimary"
+                android:onClick="@{() -> viewModel.onAddCVClicked()}"
+                android:text="@string/addCV"
+                android:textColor="@color/white"
+                app:isClickable="@{viewModel.cvLiveData.areAllDataFielded()}" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

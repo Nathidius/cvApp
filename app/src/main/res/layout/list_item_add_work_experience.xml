@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="workExperience"
+            type="com.example.cvapp.data.model.WorkExperience" />
+
+        <variable
+            name="textWatcher"
+            type="android.text.TextWatcher" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_medium">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:error="@{@string/editTextError}"
+            app:text="@{workExperience.companyName}">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_cv_company"
+                android:gravity="center_vertical"
+                android:hint="@string/companyName"
+                android:inputType="text"
+                android:text="@={workExperience.companyName}"
+                android:textSize="@dimen/text_big"
+                app:textWatcher="@{textWatcher}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:error="@{@string/editTextError}"
+            app:text="@{workExperience.position}">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_cv_job_title"
+                android:gravity="center_vertical"
+                android:hint="@string/position"
+                android:inputType="text"
+                android:text="@={workExperience.position}"
+                android:textSize="@dimen/text_big"
+                app:textWatcher="@{textWatcher}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:error="@{@string/editTextError}"
+            app:text="@{workExperience.from}">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_cv_calendar"
+                android:gravity="center_vertical"
+                android:hint="@string/from"
+                android:inputType="date"
+                android:text="@={workExperience.from}"
+                android:textSize="@dimen/text_big"
+                app:textWatcher="@{textWatcher}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:error="@{@string/editTextError}"
+            app:text="@{workExperience.to}">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_cv_calendar"
+                android:gravity="center_vertical"
+                android:hint="@string/to"
+                android:inputType="date"
+                android:text="@={workExperience.to}"
+                android:textSize="@dimen/text_big"
+                app:textWatcher="@{textWatcher}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</layout>
